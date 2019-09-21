@@ -2,7 +2,7 @@ using System;
 
 namespace TDDMicroExercises.TirePressureMonitoringSystem
 {
-    public class RandomSensor
+    public class RandomSensor : Sensor
     {
         //
         // The reading of the pressure value from the sensor is simulated in this implementation.
