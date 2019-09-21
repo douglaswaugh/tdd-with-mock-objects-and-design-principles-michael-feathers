@@ -5,13 +5,13 @@
         private const double LowPressureThreshold = 17;
         private const double HighPressureThreshold = 21;
 
-        private readonly Sensor _sensor;
+        private readonly RandomSensor _sensor;
 
         bool _alarmOn = false;
 
-        public Alarm() : this (new Sensor()) {}
+        public Alarm() : this (new RandomSensor()) {}
 
-        public Alarm(Sensor sensor)
+        public Alarm(RandomSensor sensor)
         {
             _sensor = sensor;
         }
