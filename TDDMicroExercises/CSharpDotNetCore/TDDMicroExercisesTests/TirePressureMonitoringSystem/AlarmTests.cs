@@ -16,5 +16,17 @@ namespace TDDMicroExercisesTests.TirePressureMonitoringSystem
 
             Assert.That(alarm.AlarmOn, Is.True);
         }
+
+        [Test]
+        public void Should_not_trigger_alarm_when_sensor_reports_pressure_at_or_above_threshold()
+        {
+            var sensor = new StubSensor(17);
+
+            var alarm = new Alarm(sensor);
+
+            alarm.Check();
+
+            Assert.That(alarm.AlarmOn, Is.False);
+        }
     }
 }
