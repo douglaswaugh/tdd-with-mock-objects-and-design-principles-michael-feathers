@@ -10,7 +10,7 @@ namespace TDDMicroExercisesTests.TirePressureMonitoringSystem
         {
             var sensor = new StubSensor(16);
 
-            var alarm = new Alarm(sensor);
+            var alarm = CreateAlarm(sensor);
 
             alarm.Check();
 
@@ -22,11 +22,16 @@ namespace TDDMicroExercisesTests.TirePressureMonitoringSystem
         {
             var sensor = new StubSensor(17);
 
-            var alarm = new Alarm(sensor);
+            var alarm = CreateAlarm(sensor);
 
             alarm.Check();
 
             Assert.That(alarm.AlarmOn, Is.False);
+        }
+
+        private Alarm CreateAlarm(Sensor sensor)
+        {
+            return new Alarm(sensor);
         }
     }
 }
