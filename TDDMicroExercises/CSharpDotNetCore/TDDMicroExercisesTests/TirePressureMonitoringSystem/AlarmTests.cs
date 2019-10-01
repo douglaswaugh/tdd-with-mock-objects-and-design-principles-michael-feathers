@@ -31,7 +31,10 @@ namespace TDDMicroExercisesTests.TirePressureMonitoringSystem
 
         private Alarm CreateAlarm(Sensor sensor)
         {
-            return new Alarm(sensor);
+            var lowPressureThreshold = 16;
+            var highPressureThreshold = 21;
+
+            return new Alarm(sensor, new Control(lowPressureThreshold, highPressureThreshold, sensor));
         }
     }
 }

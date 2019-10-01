@@ -6,14 +6,16 @@
         private const double HighPressureThreshold = 21;
 
         private readonly Sensor _sensor;
+        private readonly Control _control;
 
         bool _alarmOn = false;
 
-        public Alarm() : this (new RandomSensor()) {}
+        public Alarm() : this (new RandomSensor(), new Control(LowPressureThreshold, HighPressureThreshold, new RandomSensor())) {}
 
-        public Alarm(Sensor sensor)
+        public Alarm(Sensor sensor, Control control)
         {
             _sensor = sensor;
+            _control = control;
         }
 
         public void Check()
